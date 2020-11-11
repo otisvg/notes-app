@@ -1,8 +1,14 @@
-function testListViewReturns() {
-  var noteview = new Notelistview();
-  var note = new Note("Fav food = beef")
-  var note = new Note("Fav drink = beer")
-  assert.isTrue(noteview.allNotes() = "Fav food = beef, Fav drink = beer");
-};
+(function testListViewReturns(exports) {
+  //mocking?
+  var noteList = new Notelist();
+  noteList.addNote("Fav food = beef");
+  noteList.addNote("Fav drink = beer");
 
-testListViewReturns()
+  console.log(noteList.returnNotes());
+  
+  var noteListView = new Notelistview(noteList.savednotes);
+
+  assert.isTrue(noteListView.allNotes() === "Fav food = beef, Fav drink = beer");
+})(this);
+
+
