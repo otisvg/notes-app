@@ -11,13 +11,14 @@ function testNotesArrayLength() {
 function testOutputNotes() {
   var notelist = new Notelist();
   notelist.addNote("test")
-  assert.isTrue(notelist.savednotes[0].savednote === "test");
+  assert.isTrue(notelist.savedNotes[0] === "test");
 };
 
 function testReturnsAllNotes() {
   var notelist = new Notelist();
   notelist.addNote("test")
   assert.isTrue(notelist.returnNotes() === "test");
+
 };
 
 testNotesExist();
