@@ -1,30 +1,28 @@
   (function() {
-  
+
+  var notelist = new Notelist();
+  notelist.addNote("test")
+
   function testNotesArrayExists() {
-    var note = new Notelist();
-    assert.isTrue(Array.isArray(note.savedNotes));
+    assert.isTrue(Array.isArray(notelist.savedNotes));
   };
 
   function testNotesArrayLength() {
-    var note = new Notelist();
-    assert.isTrue(Array.length === 1);
+    assert.isTrue(notelist.savedNotes.length === 1);
   };
 
   function testOutputNotes() {
-    var notelist = new Notelist();
-    notelist.addNote("test")
-    assert.isTrue(notelist.savedNotes[0] === "test");
+    assert.isTrue(notelist.savedNotes[0].note === "test");
   };
 
   function testReturnsAllNotes() {
-    var notelist = new Notelist();
-    notelist.addNote("test")
-    assert.isTrue(notelist.returnNotes() === "test");
-
+    assert.isTrue(notelist.returnNotes() === notelist.savedNotes);
   };
+  
   testNotesArrayExists();
   testNotesArrayLength();
   testOutputNotes();
   testReturnsAllNotes()
+
 })()
   
